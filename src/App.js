@@ -1,0 +1,26 @@
+import React, { Component } from 'react';
+import Create from './components/Create';
+import SearchAndList from './components/SearchAndList';
+import {BrowserRouter as Router,Route} from "react-router-dom";
+import Details from './components/Detail';
+export class App extends Component {
+  
+
+  render() {
+    // let book = this.state.books.filter(book => book.id === 4)
+    return (
+      
+      <Router>
+      
+      <div className="App container"> 
+        <Route exact path = "/" component = {SearchAndList}/>
+        <Route exact path = "/detail/:id" component = {Details}/>
+        <Route exact path = "/create" component = {Create}/>
+      </div>
+      </Router>
+    )
+    
+  }
+}
+
+export default App
