@@ -6,8 +6,5 @@ import './index.css';
 import App from './App';
 
 
-// const Index = () => {
-//   return <div>Hello React!</div>;
-// };
 
 ReactDOM.render(<App/>, document.getElementById("index"));
