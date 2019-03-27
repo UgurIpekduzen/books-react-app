@@ -47,6 +47,7 @@ export default class SearchAndList extends Component {
                     <th>Kitap Adı</th>
                     <th>Yazar</th>
                     <th>Yayınevi</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +58,11 @@ export default class SearchAndList extends Component {
                     <td>{book.kitapAdi}</td>
                     <td>{book.yazar}</td>
                     <td>{book.yayinEvi}</td>
+                    <td>
+                      <a href={`detail/${book.id}`}>
+                        <button className="btn btn-success"> Detaylar</button>
+                      </a>
+                    </td>
                 </tr>
                 ) 
             }
