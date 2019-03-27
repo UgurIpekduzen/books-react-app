@@ -13,7 +13,7 @@ export default class Detail extends Component {
         const { match: { params } } = this.props;
         axios.get(`https://5c96924f939ad600149a9534.mockapi.io/books/${params.id}`).then((response) => {
           this.setState({ book: response.data });
-        }).catch((error) => { console.log(error)});
+        })
       };
 
   render() {
@@ -22,12 +22,12 @@ export default class Detail extends Component {
       <div>
             <div className="card">
                  <div className="card-header">
-                    {info.id}
+                    <strong>ID = </strong>{info.id}
                  </div>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item">{info.kitapAdi}</li>
-                    <li className="list-group-item">{info.yazar}</li>
-                    <li className="list-group-item">{info.yayinEvi}</li>
+                    <li className="list-group-item"><strong>Kitap Adı = </strong>{info.kitapAdi}</li>
+                    <li className="list-group-item"><strong>Yazar = </strong>{info.yazar}</li>
+                    <li className="list-group-item"><strong>Yayin Evi = </strong>{info.yayinEvi}</li>
                 </ul>
             </div>
       </div>

@@ -7,7 +7,6 @@ export class App extends Component {
   
 
   render() {
-    // let book = this.state.books.filter(book => book.id === 4)
     return (
       <Router>
         <div className="App container"> 
