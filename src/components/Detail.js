@@ -28,7 +28,7 @@ export default class Detail extends Component {
               <ListGroup>
                   <ListGroupItem><strong>Kitap Adı = </strong>{info.bookName}</ListGroupItem>
                   <ListGroupItem><strong>Yazar = </strong>{info.authorName}</ListGroupItem>
-                  <ListGroupItem><strong>Yayin Evi = </strong>{info.yayinEvi}</ListGroupItem>
+                  <ListGroupItem><strong>Yayin Evi = </strong>{info.publisherName}</ListGroupItem>
               </ListGroup>
           </Card>
       </div>
