@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Create from './components/Create';
 import SearchAndList from './components/SearchAndList';
-import {BrowserRouter as Router,Route} from "react-router-dom";
-import Detail from './components/Detail';
+import {BrowserRouter as Router,Route} from "react-router-dom"
+import Detail from './components/Detail'
 export class App extends Component {
   
 

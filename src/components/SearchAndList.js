@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Container, Form, FormGroup, Input, Table, Pagination, PaginationItem, PaginationLink, Row } from 'reactstrap';
-import axios from 'axios';
+import { Container, Form, FormGroup, Input, Table, Pagination, PaginationItem, PaginationLink, Row } from 'reactstrap'
+import axios from 'axios'
 
 export default class SearchAndList extends Component {
     constructor(props) {
@@ -27,7 +27,7 @@ export default class SearchAndList extends Component {
       }
 
       componentDidMount() {
-        axios.get('https://5c96924f939ad600149a9534.mockapi.io/books').then((response) => {
+        axios.get('https://5c9c1ea85ee0830014b71918.mockapi.io/books').then((response) => {
           this.setState({ books: response.data })
         })
       }
@@ -39,17 +39,17 @@ export default class SearchAndList extends Component {
     const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook)
     
     const filteredData = currentBooks.filter(book => {
-        return book.kitapAdi.toLowerCase().includes(term.toLowerCase()) || 
-        book.yazar.toLowerCase().includes(term.toLowerCase()) ||
-        book.yayinEvi.toLowerCase().includes(term.toLowerCase() && term !== book.id);
+        return book.bookName.toLowerCase().includes(term.toLowerCase()) || 
+        book.authorName.toLowerCase().includes(term.toLowerCase()) ||
+        book.publisherName.toLowerCase().includes(term.toLowerCase() && term !== book.id)
     }).map(book => {
       return (
         <tbody>
           <tr key= {book.id}>
             <td>{book.id}</td>
-            <td>{book.kitapAdi}</td>
-            <td>{book.yazar}</td>
-            <td>{book.yayinEvi}</td>
+            <td>{book.bookName}</td>
+            <td>{book.authorName}</td>
+            <td>{book.publisherName}</td>
             <td>
               <a href={`detail/${book.id}`}>
                 <button className="btn btn-success"> Detaylar</button>

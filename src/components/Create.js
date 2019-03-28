@@ -6,44 +6,44 @@ export default class Create extends Component {
   constructor(props) {
     super(props)
     this.state = {
-        kitapAdi: '',
-        yazar: '',
-        yayinEvi: ''
+        bookName: '',
+        authorName: '',
+        publisherName: ''
     }
   }
 
-  onChangeKitapAdi = (e) => {
+  onChangeBookName = (e) => {
       this.setState({
-          kitapAdi: e.target.value
+          bookName: e.target.value
       })
   }
 
-  onChangeYazar = (e) => {
+  onChangeAuthorName = (e) => {
       this.setState({
-          yazar: e.target.value
+          authorName: e.target.value
       })
   }
 
-  onChangeYayinEvi = (e) => {
+  onChangePublisherName = (e) => {
     this.setState({
-        yayinEvi: e.target.value
+        publisherName: e.target.value
     })
   }
 
   onSubmit = (e) => {
       e.preventDefault();
       const yeniKitap = {
-        kitapAdi: this.state.kitapAdi,
-        yazar: this.state.yazar,
-        yayinEvi: this.state.yayinEvi
+        bookName: this.state.bookName,
+        authorName: this.state.authorName,
+        publisherName: this.state.publisherName
       }
-      axios.post('https://5c96924f939ad600149a9534.mockapi.io/books', yeniKitap)
+      axios.post('https://5c9c1ea85ee0830014b71918.mockapi.io/books', yeniKitap)
       .then(res => console.log(res.data))
       
       this.setState({
-        kitapAdi: '',
-        yazar: '',
-        yayinEvi: ''
+        bookName: '',
+        authorName: '',
+        publisherName: ''
       })
   }
 
@@ -56,30 +56,30 @@ export default class Create extends Component {
         <CardBody>
           <Form onSubmit = {this.onSubmit}>
             <FormGroup>
-              <Label htmlFor = "kitapAdi">Kitap Adı</Label>
+              <Label htmlFor = "bookName">Kitap Adı</Label>
               <Input type ="text" 
-              name = "kitapAdi"
+              name = "bookName"
               placeholder = "Kitap Adı Giriniz"
               className = "form-control"
-              onChange = {this.onChangeKitapAdi}
+              onChange = {this.onChangeBookName}
               />
             </FormGroup>
             <FormGroup>
-              <Label htmlFor = "yazar">Yazar</Label>
+              <Label htmlFor = "authorName">Yazar</Label>
               <Input type = "text" 
-              name = "yazar"
+              name = "authorName"
               placeholder = "Yazar Giriniz"
               className = "form-control"
-              onChange = {this.onChangeYazar}
+              onChange = {this.onChangeAuthorName}
               />
             </FormGroup>
             <FormGroup>
-              <Label htmlFor = "yayinevi">Yayınevi</Label>
+              <Label htmlFor = "publisherName">Yayınevi</Label>
               <Input type = "text" 
-              name = "yayinevi"
+              name = "publisherName"
               placeholder = "Yayınevi Giriniz"
               className = "form-control"
-              onChange = {this.onChangeYayinEvi}
+              onChange = {this.onChangePublisherName}
               />
             </FormGroup>
             <Button color= "primary" type="submit" block>Ekle</Button>
